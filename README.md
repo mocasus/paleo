@@ -1,6 +1,6 @@
 <div align="center">
 
-![paleo logo](assets/paleo-logo.png)
+![paleo logo](assets/logo.jpg)
 
 [![Version](https://img.shields.io/badge/version-2.3.0-blue)](https://github.com/mocasus/paleo/releases) · [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) · [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org) · [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/mocasus/paleo) · [![Benchmarks](https://img.shields.io/badge/benchmarks-reproducible-orange)](BENCHMARK.md)
 
