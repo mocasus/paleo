@@ -8,7 +8,7 @@
 
 > Token-saving skills for LLM agents — cut output & context tokens without choking the model.
 
-[Why](#why-paleo) · [See it](#see-it-before--after) · [Features](#features) · [Skills](#skills) · [Quick Start](#quick-start) · [Benchmarks](#benchmarks) · [Comparison](#comparison) · [Tips](#tips--triggers) · [Install](#installation)
+[Why](#why-paleo) · [See it](#see-it-before--after) · [Features](#features) · [Skills](#skills) · [Combos](#recommended-combos) · [Quick Start](#quick-start) · [Benchmarks](#benchmarks) · [Comparison](#comparison) · [Tips](#tips--triggers) · [Install](#installation)
 
 </div>
 
@@ -51,6 +51,21 @@ paleo compresses *delivery*, not meaning. Code, commands, and technical terms st
 | `paleo-converse` | Condense old chat turns + merge duplicate messages; keep last N verbatim. | `condense chat` · `compress conversation` · `paleo-converse N=8` |
 | `paleo-summary` | Tight intisari of bulky tool output / logs / diffs / dumps. | `tldr` · `condense this` · `summarize output` |
 | `paleo-json` | Minify & compact structured/JSON output, stay parseable. | `compact json` · `minify` |
+
+## Recommended combos
+
+`paleo` is the base — keep it on. Layer the rest by what you're doing:
+
+| Situation | Combo | Why |
+|---|---|---|
+| Daily driver (long / chatty sessions) | `paleo` + `paleo-trim-context` | Base + automatic context hygiene. |
+| History piling up | + `paleo-converse` | Condense + merge duplicate turns once a session gets long. |
+| Debugging / bulky tool output | `paleo` + `paleo-summary` + `paleo-json` | Logs → intisari; JSON → minified. |
+| Tight cost / hard limit | `paleo` + `paleo-budget` (+ `paleo-trim-context`) | Hard ceiling + shrink context first. |
+| Max savings (all on) | all six skills | Overkill daily, but safe for extreme thrift. |
+
+> [!TIP]
+> You rarely need every skill at once. `paleo` + `paleo-trim-context` is the default; add `paleo-converse` for messy chats, `paleo-summary` / `paleo-json` for heavy tool output, and `paleo-budget` only when a hard cap is required.
 
 ## Quick Start
 
