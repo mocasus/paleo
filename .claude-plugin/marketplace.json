@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "paleo",
-      "source": "./plugin.json"
+      "source": "./"
     }
   ]
 }
