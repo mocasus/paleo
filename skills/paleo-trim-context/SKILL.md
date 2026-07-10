@@ -2,7 +2,6 @@
 name: paleo-trim-context
 description: Use when context window is large / token cost high / long session. Proactively trim, summarize, or drop stale content to save context tokens without losing the task state.
 version: 2.0.0
-author: mocasus
 license: MIT
 metadata:
   hermes:

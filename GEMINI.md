@@ -9,4 +9,4 @@ Token-saving skill collection. Skills make LLM usage cheaper: compress output, t
 - Never commit `.env` / `*.session` (git-ignored).
 
 ## Token budget (hard rule)
-Skills load into the LLM context, so keep them token-minimal: caveman-compressed prose (drop filler, short clauses), exact code only. Smaller SKILL.md = cheaper + faster agents.
+Skills load into the LLM context, so keep them token-minimal: terse prose (drop filler, short clauses), exact code only. Smaller SKILL.md = cheaper + faster agents.

@@ -1,13 +1,15 @@
 # Install paleo
 
-Pick the agent you use. All methods pull from `mocasus/paleo` on GitHub.
+Pick the agent you use. All methods pull from the `paleo` repo on GitHub.
 
 ## Claude Code
 
 ```bash
-claude plugin marketplace add mocasus/paleo
-claude plugin install tg-leave-by-keyword@paleo
+claude plugin marketplace add https://github.com/mocasus/paleo
+claude plugin install paleo@paleo
 ```
+
+One plugin bundles all 4 skills: `paleo`, `paleo-trim-context`, `paleo-skip-preamble`, `paleo-budget`.
 
 ## Codex / Cursor / Windsurf / Cline / 30+ agents
 
@@ -24,24 +26,23 @@ gemini extensions install https://github.com/mocasus/paleo
 ## Hermes Agent
 
 ```bash
-cp -r skills/tg-leave-by-keyword ~/.hermes/skills/software-development/
+cp -r skills/paleo skills/paleo-trim-context skills/paleo-skip-preamble skills/paleo-budget ~/.hermes/skills/
 ```
 
-The skill loads on the next Hermes session.
+The skills load on the next Hermes session.
 
 ## Manual (any agent)
 
-Clone and copy the skill folder you want:
+Clone and copy the skill folders you want:
 
 ```bash
 git clone https://github.com/mocasus/paleo.git
-cp -r paleo/skills/tg-leave-by-keyword <your-agent-skills-dir>/
+cp -r paleo/skills/paleo ~/.hermes/skills/   # example: just the paleo skill
 ```
 
-## Prerequisites for `tg-leave-by-keyword`
+## Prerequisites
 
-- Python 3.10+ and `pip install telethon python-dotenv`
-- A Telegram user-account `.session` file (sign in once via Telethon)
-- `.env` with `TELEGRAM_API_ID` and `TELEGRAM_API_HASH`
+- No external dependencies — every skill is plain Markdown, nothing to install.
+- For Hermes / Claude Code, just drop the `skills/<name>` folder into your agent's skills directory.
 
 Never commit `.env` or `*.session` — they are git-ignored.

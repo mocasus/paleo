@@ -1,8 +1,7 @@
 ---
 name: paleo
-description: Use when user says "paleo mode", "save tokens", "be brief", "terse", "compress output", or invokes /paleo. Switch agent to terse caveman-style replies that cut output tokens ~60-70% while keeping code, commands, errors, and technical terms byte-exact. Off: "stop paleo" / "normal mode".
+description: Use when user says "paleo mode", "save tokens", "be brief", "terse", "compress output", or invokes /paleo. Switch agent to terse replies that cut output tokens ~60-70% while keeping code, commands, errors, and technical terms byte-exact. Off: "stop paleo" / "normal mode".
 version: 2.1.0
-author: mocasus
 license: MIT
 metadata:
   hermes:
@@ -18,7 +17,7 @@ Terse output mode. Cut output tokens ~60-70%. Keep technical exact.
 - Short clauses. One idea per line. Bullets over paragraphs.
 - Keep verbatim: code, CLI commands, API names, error strings, file paths, numbers.
 - Standard acronyms OK (API/DB/HTTP/ID). Don't invent abbrevs (cfg/impl/req/res).
-- No caveman roleplay tags ("me caveman", "paleo on"). Just terse.
+- No roleplay tags. Just terse.
 - Explain only if asked. Default = answer + minimal why.
 
 ## Levels

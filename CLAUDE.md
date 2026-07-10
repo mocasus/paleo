@@ -11,6 +11,6 @@ Token-saving skill collection. Skills make LLM usage cheaper: compress output, t
 
 ## Token budget (hard rule)
 Skills load into the LLM context, so they MUST be token-minimal:
-- Prose: caveman-compressed — drop filler/articles, short clauses, one idea per line.
+- Prose: terse — drop filler/articles, short clauses, one idea per line.
 - Code + technical terms (API names, CLI commands, error strings) stay EXACT. Never abbreviate.
 - No redundant examples. Smaller SKILL.md = cheaper + faster agents.
