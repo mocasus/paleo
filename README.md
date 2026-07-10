@@ -1,12 +1,12 @@
 <div align="center">
 
-![version](https://img.shields.io/badge/version-2.3.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![tokens saved](https://img.shields.io/badge/tokens%20saved-%7E54%25-brightgreen) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
+![paleo logo](assets/paleo-logo.png)
 
-<img src="./assets/logo.jpg" alt="paleo" width="420">
+[![Version](https://img.shields.io/badge/version-2.3.0-blue)](https://github.com/mocasus/paleo/releases) · [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) · [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org) · [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/mocasus/paleo) · [![Benchmarks](https://img.shields.io/badge/benchmarks-reproducible-orange)](BENCHMARK.md)
 
 # 🦴 paleo
 
-**Token-saving skill collection for LLM agents. Cut token use, keep output exact — modular skills, not a caveman persona, and never a rewrite of your code.**
+> Token-saving skills for LLM agents — cut output & context tokens without choking the model.
 
 [Why](#why-paleo) · [See it](#see-it-before--after) · [Features](#features) · [Skills](#skills) · [Quick Start](#quick-start) · [Benchmarks](#benchmarks) · [Comparison](#comparison) · [Tips](#tips--triggers) · [Install](#installation)
 
