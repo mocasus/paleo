@@ -1,20 +1,20 @@
 ![version](https://img.shields.io/badge/version-2.1.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
 
-<p align="center"><img src="./assets/logo.png" alt="paleo" width="420"></p>
+<p align="center"><img src="./assets/logo.png" alt="paleo" width="460"></p>
 
 # 🪨 paleo
 
-Personal, public **token-saving** skill collection by **mocasus** — works on Claude Code, Codex, Gemini CLI, Hermes Agent. Same spirit as *caveman*: cut LLM token use. But paleo is my own toolbox of skills whose job is to save tokens — compress output, trim context, skip filler, cap budget.
+> Token-saving skill collection for LLM agents. Cut token use, keep output exact.
 
-Skills are token-minimal + caveman-compressed: prose terse, code/terms exact. Loading one costs less context.
+Personal, public collection by **mocasus** — works on Claude Code, Codex, Gemini CLI, Hermes Agent. Same spirit as *caveman*: spend fewer tokens. paleo is a toolbox of skills that compress output, trim context, skip filler, and cap budget.
 
-Each skill = `skills/<name>/SKILL.md` with `name` + `description` frontmatter (loads in Claude Code plugins, `npx skills` registry, Gemini extensions, Hermes).
+Skills are token-minimal + caveman-compressed: prose terse, code/terms byte-exact. Loading one costs less context. Each skill is a `skills/<name>/SKILL.md` with `name` + `description` frontmatter — loads in Claude Code plugins, `npx skills` registry, Gemini extensions, and Hermes.
 
 ## Skills
 
 | Skill | What it does |
 |---|---|
-| `paleo` | Terse caveman-style output — cut output tokens ~60-70%, keep code/terms exact. |
+| `paleo` | Terse caveman-style output — cut output tokens ~60–70%, keep code/terms exact. |
 | `paleo-trim-context` | Proactively trim/summarize context to save tokens without losing task state. |
 | `paleo-skip-preamble` | Strip greetings/apologies/hedging from replies. |
 | `paleo-budget` | Hard token budget per task — cap spend, summarize if exceeded. |
@@ -52,6 +52,7 @@ paleo is open — wire your own token-saving skills:
 No repo edit needed — just drop any `SKILL.md` into your agent's skills dir (e.g. `~/.hermes/skills/<name>/`). paleo loads whatever it finds under `skills/`.
 
 ## License
+
 MIT — see [LICENSE](./LICENSE).
 
 ---
