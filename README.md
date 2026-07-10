@@ -1,8 +1,8 @@
-![version](https://img.shields.io/badge/version-2.1.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
+![version](https://img.shields.io/badge/version-2.2.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
 
 <p align="center"><img src="./assets/logo.jpg" alt="paleo" width="460"></p>
 
-# 🪨 paleo
+# 🦴 paleo
 
 > Token-saving skill collection for LLM agents. Cut token use, keep output exact.
 
@@ -46,6 +46,8 @@ gemini extensions install https://github.com/mocasus/paleo
 cp -r skills/paleo skills/paleo-trim-context skills/paleo-skip-preamble skills/paleo-budget ~/.hermes/skills/
 ```
 
+All 4 skills load automatically — `paleo`, `paleo-trim-context`, `paleo-skip-preamble`, `paleo-budget`.
+
 > Full per-agent steps in [INSTALL.md](./INSTALL.md).
 
 ## Custom skills
@@ -65,4 +67,4 @@ MIT — see [LICENSE](./LICENSE).
 
 ---
 
-<p align="center">🪨 paleo · v2.1.0 · MIT</p>
+<p align="center">🦴 paleo · v2.2.0 · MIT</p>
