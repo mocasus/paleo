@@ -2,7 +2,7 @@
 
 ![paleo logo](assets/logo.jpg)
 
-[![Version](https://img.shields.io/badge/version-2.3.0-blue)](https://github.com/mocasus/paleo/releases) · [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) · [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org) · [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/mocasus/paleo) · [![Benchmarks](https://img.shields.io/badge/benchmarks-reproducible-orange)](BENCHMARK.md)
+[![Version](https://img.shields.io/badge/version-2.3.0-blue)](https://github.com/mocasus/paleo/releases) · [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) · [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org) · [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/mocasus/paleo) · [![Benchmarks](https://img.shields.io/badge/benchmarks-reproducible-orange)](BENCHMARK.md) · [![Agents](https://img.shields.io/badge/agents-40%2B-lightgrey)](https://agentskills.io)
 
 # 🦴 paleo
 
@@ -36,7 +36,7 @@ paleo compresses *delivery*, not meaning. Code, commands, and technical terms st
 - [x] **Output + context savings** — ~50–70% fewer output tokens (median ~54% on a 6-task sample — see [BENCHMARK.md](./BENCHMARK.md)), plus proactive context trimming.
 - [x] **Production-safe** — compresses output and context only; never rewrites your code.
 - [x] **Hard token budget** — `paleo-budget` caps spend and summarizes the tail.
-- [x] **Cross-agent** — works on Claude Code, Codex, Gemini CLI, and Hermes Agent.
+- [x] **Cross-agent** — open Agent Skills standard: Claude Code, Codex, Gemini CLI, Qwen Code, OpenCode, Cursor, GitHub Copilot, Cline, Windsurf + **40+ agents** via `npx skills add`.
 - [x] **Zero-setup triggers** — plain English phrases, no slash commands to register.
 - [x] **Low overhead** — each `SKILL.md` is intentionally terse, so loading stays cheap.
 - [x] **Open & extensible** — drop in your own token-saving skills.
@@ -60,7 +60,7 @@ git clone https://github.com/mocasus/paleo.git
 claude plugin marketplace add https://github.com/mocasus/paleo
 claude plugin install paleo@paleo
 
-# 3. Any agent via the npx skills registry
+# 3. Any agent via the open Agent Skills registry (installs to 40+ clients)
 npx skills add mocasus/paleo
 ```
 
@@ -98,7 +98,7 @@ paleo is often compared with two other token-saving approaches: **Caveman** (a t
 | **Touches your code** | ❌ No (output/context only) | ❌ No | ⚠️ Yes — refactors / reuses code |
 | **Context & reasoning savings** | ✅ `paleo-trim-context` | ❌ None | ◑ Partial (caching) |
 | **Hard budget** | ✅ `paleo-budget` | ❌ | ❌ |
-| **Cross-agent** | ✅ Claude / Codex / Gemini / Hermes | ➖ Portable prompt, but monolithic | ➖ Claude Code skill |
+| **Cross-agent** | ✅ 40+ agents (open standard) | ➖ Portable prompt, but monolithic | ➖ Claude Code skill |
 | **Activation** | Plain phrases | Edit system prompt | Install + invoke skill |
 | **Reasoning-model safe** | ✅ Never compresses thought | ❌ Can *raise* tokens (e.g. +3% on Opus) | ➖ |
 | **Known risk** | None (output-only) | Can fight "expand" heuristics; may *raise* tokens on reasoning models | Refactor can change behavior |
@@ -141,7 +141,7 @@ git clone https://github.com/mocasus/paleo.git
 claude plugin marketplace add https://github.com/mocasus/paleo
 claude plugin install paleo@paleo
 
-# Codex / Cursor / Windsurf / 30+ agents (npx skills registry)
+# Codex / Cursor / Windsurf / 40+ agents (npx skills registry)
 npx skills add mocasus/paleo
 
 # Gemini CLI
