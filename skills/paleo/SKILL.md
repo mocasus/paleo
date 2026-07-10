@@ -1,7 +1,7 @@
 ---
 name: paleo
 description: 'Use when user says "paleo mode", "save tokens", "be brief", "terse", "compress output", or says "paleo". Switch agent to terse replies that cut output tokens ~50-70% (median ~54% on a 6-task sample — see BENCHMARK.md) while keeping code, commands, errors, and technical terms byte-exact. Off: "stop paleo" / "normal mode".'
-version: 2.3.0
+version: 2.4.0
 license: MIT
 metadata:
   hermes:

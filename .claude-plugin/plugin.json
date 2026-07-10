@@ -1,12 +1,15 @@
 {
   "name": "paleo",
-  "version": "2.3.0",
-  "description": "🦴 paleo — personal token-saving skill collection (Claude Code / Codex / Gemini / Hermes). Compress output, trim context, skip preamble, cap token budget.",
+  "version": "2.4.0",
+  "description": "🦴 paleo — personal token-saving skill collection (Claude Code / Codex / Gemini / Hermes). Compress output, trim context, skip preamble, cap token budget, condense conversation, summarize bulky output, compact JSON.",
   "homepage": "https://github.com/mocasus/paleo",
   "skills": [
     { "name": "paleo", "source": "./skills/paleo" },
     { "name": "paleo-trim-context", "source": "./skills/paleo-trim-context" },
     { "name": "paleo-skip-preamble", "source": "./skills/paleo-skip-preamble" },
-    { "name": "paleo-budget", "source": "./skills/paleo-budget" }
+    { "name": "paleo-budget", "source": "./skills/paleo-budget" },
+    { "name": "paleo-converse", "source": "./skills/paleo-converse" },
+    { "name": "paleo-summary", "source": "./skills/paleo-summary" },
+    { "name": "paleo-json", "source": "./skills/paleo-json" }
   ]
 }
