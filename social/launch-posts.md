@@ -19,7 +19,6 @@ paleo attacks all 4 vectors 👇
 **3/**
 ▸ `paleo` — aggressive verbosity compression (drop filler, keep code exact)
 ▸ `paleo-trim-context` — proactive context trim before overflow
-▸ `paleo-skip-preamble` — cut greetings / sign-offs
 ▸ `paleo-budget` — hard token ceiling, auto-summarize
 
 **4/**
@@ -57,7 +56,6 @@ paleo takes a different path. It's a set of pluggable agent skills that compress
 What's inside:
 • **paleo** — aggressive output compression, code-exact
 • **paleo-trim-context** — trims context before it overflows the window
-• **paleo-skip-preamble** — drops greetings and sign-offs
 • **paleo-budget** — hard token ceiling with automatic summarization
 
 The part I'm proudest of: it's *measured*, not marketed. A reproducible 10-turn benchmark shows a median 53.8% output reduction with zero correctness regression on a reasoning model. No screenshots of a single lucky run — clone it, run `python3 bench/benchmark.py`, see your own numbers.
@@ -79,7 +77,7 @@ Title: **paleo — token-saving agent skills (output + context), measured 54% me
 Body:
 I built paleo after getting frustrated that every "token saver" either mangled my code or was just a persona prompt. paleo compresses *verbosity* only — filler, preamble, bloated context — and leaves code byte-for-byte intact.
 
-4 skills: paleo (output compression), paleo-trim-context, paleo-skip-preamble, paleo-budget (hard ceiling). Works with Claude Code / Codex / Gemini CLI / OpenCode / Qwen Code.
+6 skills: paleo (output compression), paleo-trim-context, paleo-budget (hard ceiling), paleo-converse, paleo-summary, paleo-json. Works with Claude Code / Codex / Gemini CLI / OpenCode / Qwen Code.
 
 Unlike competitors that publish unverifiable % claims, paleo ships a reproducible benchmark: `python3 bench/benchmark.py` → median 53.8% output reduction, 0 correctness regression.
 

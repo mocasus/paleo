@@ -3,7 +3,7 @@
 paleo benchmark harness — reproducible token-savings measurement.
 
 Compares a BASELINE (default verbose assistant) vs PALEO (terse system prompt
-derived from skills/paleo + skills/paleo-skip-preamble) on a fixed task corpus.
+derived from skills/paleo) on a fixed task corpus.
 
 Metric: delivery tokens = len(assistant_content) / 4  (matches how paleo
 compresses what the user actually reads; excludes any reasoning/thinking tokens).

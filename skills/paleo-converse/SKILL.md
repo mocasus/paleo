@@ -1,7 +1,7 @@
 ---
 name: paleo-converse
 description: 'Use when user says "compress conversation", "condense chat", "summarize history", "too long context", or a session has many old turns. Condense prior conversation turns into a tight summary, merge near-duplicate messages, keep the last N turns verbatim. Saves context tokens without losing task state. Off: "stop condensing" / "keep full history".'
-version: 2.4.0
+version: 2.4.1
 license: MIT
 metadata:
   hermes:

@@ -9,7 +9,7 @@ claude plugin marketplace add https://github.com/mocasus/paleo
 claude plugin install paleo@paleo
 ```
 
-One plugin bundles all 4 skills: `paleo`, `paleo-trim-context`, `paleo-skip-preamble`, `paleo-budget`.
+One plugin bundles all 6 skills: `paleo`, `paleo-trim-context`, `paleo-budget`, `paleo-converse`, `paleo-summary`, `paleo-json`.
 
 ## Codex / Cursor / Windsurf / Cline / 30+ agents
 
@@ -26,7 +26,7 @@ gemini extensions install https://github.com/mocasus/paleo
 ## Hermes Agent
 
 ```bash
-cp -r skills/paleo skills/paleo-trim-context skills/paleo-skip-preamble skills/paleo-budget ~/.hermes/skills/
+cp -r skills/paleo skills/paleo-trim-context skills/paleo-budget ~/.hermes/skills/
 ```
 
 The skills load on the next Hermes session.

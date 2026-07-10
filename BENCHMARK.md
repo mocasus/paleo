@@ -10,7 +10,7 @@ Reproducible token-savings measurement for **paleo**. Raw numbers, no hand-wavin
 - **Endpoint:** OpenAI-compatible (`/v1/chat/completions`). Runs against any provider (we used IDRouter).
 - **Model:** `claude-sonnet-4.5` — 1 run, 6 fixed tasks. Rerun with `--model` of your choice.
 - **Baseline:** default assistant, no system prompt (representative "verbose default").
-- **paleo:** same model + the terse system prompt derived from `skills/paleo` + `skills/paleo-skip-preamble`.
+- **paleo:** same model + the terse system prompt derived from `skills/paleo`.
 - **Metric:** *delivery tokens* = `len(assistant_text) / 4`. This is exactly what the user reads and what paleo compresses. It deliberately **excludes** any reasoning/thinking tokens, so the number reflects output compression only.
 - **Harness:** `bench/benchmark.py` (Python standard library only). Deterministic corpus in `TASKS`.
 

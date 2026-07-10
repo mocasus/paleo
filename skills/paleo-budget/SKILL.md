@@ -1,12 +1,12 @@
 ---
 name: paleo-budget
 description: 'Use when user says "budget", "token limit", "stay under N tokens", or wants per-task token caps. Enforce a hard token budget per task/response — track estimate, stop before limit, summarize if exceeded. Off: "no budget" / "unlimited".'
-version: 2.4.0
+version: 2.4.1
 license: MIT
 metadata:
   hermes:
     tags: [tokens, budget, cap, efficiency]
-    related_skills: [paleo, paleo-trim-context, paleo-skip-preamble]
+    related_skills: [paleo, paleo-trim-context]
 ---
 
 # paleo-budget

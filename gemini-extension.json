@@ -1,12 +1,11 @@
 {
   "name": "paleo",
   "description": "🦴 paleo — personal token-saving skill collection.",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "homepage": "https://github.com/mocasus/paleo",
   "skills": [
     "./skills/paleo",
     "./skills/paleo-trim-context",
-    "./skills/paleo-skip-preamble",
     "./skills/paleo-budget",
     "./skills/paleo-converse",
     "./skills/paleo-summary",

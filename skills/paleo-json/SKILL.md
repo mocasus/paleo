@@ -1,7 +1,7 @@
 ---
 name: paleo-json
 description: 'Use when user says "compact json", "minify output", "tight structured", or the agent must emit JSON / structured data. Strip insignificant whitespace, collapse long arrays, shorten keys where safe, keep it parseable. Cuts tokens on structured payloads. Off: "pretty print" / "human-readable".'
-version: 2.4.0
+version: 2.4.1
 license: MIT
 metadata:
   hermes:

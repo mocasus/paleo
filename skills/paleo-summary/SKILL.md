@@ -1,7 +1,7 @@
 ---
 name: paleo-summary
 description: 'Use when user says "summarize output", "condense this", "tldr", or a tool result / log / file dump / long stdout is large. Reduce long content (tool output, logs, diffs, docs) to a concise intisari with key fields preserved. Saves context tokens on bulky payloads. Off: "full output" / "no summary".'
-version: 2.4.0
+version: 2.4.1
 license: MIT
 metadata:
   hermes:

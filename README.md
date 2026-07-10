@@ -2,7 +2,7 @@
 
 ![paleo logo](assets/logo.jpg)
 
-[![Version](https://img.shields.io/badge/version-2.4.0-blue)](https://github.com/mocasus/paleo/releases) · [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) · [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org) · [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/mocasus/paleo) · [![Benchmarks](https://img.shields.io/badge/benchmarks-reproducible-orange)](BENCHMARK.md) · [![Agents](https://img.shields.io/badge/agents-40%2B-lightgrey)](https://agentskills.io)
+[![Version](https://img.shields.io/badge/version-2.4.1-blue)](https://github.com/mocasus/paleo/releases) · [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) · [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org) · [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/mocasus/paleo) · [![Benchmarks](https://img.shields.io/badge/benchmarks-reproducible-orange)](BENCHMARK.md) · [![Agents](https://img.shields.io/badge/agents-40%2B-lightgrey)](https://agentskills.io)
 
 # 🦴 paleo
 
@@ -32,7 +32,7 @@ paleo compresses *delivery*, not meaning. Code, commands, and technical terms st
 
 ## Features
 
-- [x] **Modular & composable** — load one skill or all seven, mix per task.
+- [x] **Modular & composable** — load one skill or all six, mix per task.
 - [x] **Output + context savings** — ~50–70% fewer output tokens (median ~54% on a 6-task sample — see [BENCHMARK.md](./BENCHMARK.md)), plus proactive context trimming.
 - [x] **Production-safe** — compresses output and context only; never rewrites your code.
 - [x] **Hard token budget** — `paleo-budget` caps spend and summarizes the tail.
@@ -47,7 +47,6 @@ paleo compresses *delivery*, not meaning. Code, commands, and technical terms st
 |---|---|---|
 | `paleo` | Terse output mode — cut output tokens ~50–70%, keep code/terms exact. | `paleo mode` · `be brief` · `save tokens` |
 | `paleo-trim-context` | Proactively trim/summarize context to save tokens without losing task state. | `trim context` (auto on long sessions) |
-| `paleo-skip-preamble` | Strip greetings/apologies/hedging from replies. | auto on every reply |
 | `paleo-budget` | Hard token budget per task — cap spend, summarize if exceeded. | `budget 2000` · `stay under 2000 tokens` |
 | `paleo-converse` | Condense old chat turns + merge duplicate messages; keep last N verbatim. | `condense chat` · `compress conversation` · `paleo-converse N=8` |
 | `paleo-summary` | Tight intisari of bulky tool output / logs / diffs / dumps. | `tldr` · `condense this` · `summarize output` |
@@ -59,7 +58,7 @@ paleo compresses *delivery*, not meaning. Code, commands, and technical terms st
 # 1. Clone the collection
 git clone https://github.com/mocasus/paleo.git
 
-# 2. Claude Code — one plugin bundles all 7 skills
+# 2. Claude Code — one plugin bundles all 6 skills
 claude plugin marketplace add https://github.com/mocasus/paleo
 claude plugin install paleo@paleo
 
@@ -95,7 +94,7 @@ paleo is often compared with two other token-saving approaches: **Caveman** (a t
 
 | Dimension | 🦴 paleo | Caveman | Ponytail |
 |---|---|---|---|
-| **Form** | 7 composable skills | Single system prompt (persona) | Single coding skill / workflow |
+| **Form** | 6 composable skills | Single system prompt (persona) | Single coding skill / workflow |
 | **What it targets** | Output tokens **+** context **+** conversation turns | Output tokens only | Volume of code the agent writes (+ MCP caching) |
 | **Granularity** | Per-task, mix & match | One mode | One workflow |
 | **Touches your code** | ❌ No (output/context only) | ❌ No | ⚠️ Yes — refactors / reuses code |
@@ -127,7 +126,6 @@ paleo is often compared with two other token-saving approaches: **Caveman** (a t
 - Off: `no budget` · `unlimited`
 
 **paleo-trim-context** — auto on long sessions; `trim context` to force.
-**paleo-skip-preamble** — auto on every reply.
 **paleo-converse** — `condense chat` · `compress conversation` · `paleo-converse N=8`
 **paleo-summary** — `tldr` · `condense this` · `summarize output`
 **paleo-json** — `compact json` · `minify`
@@ -143,7 +141,7 @@ paleo is often compared with two other token-saving approaches: **Caveman** (a t
 git clone https://github.com/mocasus/paleo.git
 # copy skills/paleo*/ into your agent's skills directory
 
-# Claude Code (one plugin bundles all 4 skills)
+# Claude Code (one plugin bundles all 6 skills)
 claude plugin marketplace add https://github.com/mocasus/paleo
 claude plugin install paleo@paleo
 
@@ -154,10 +152,10 @@ npx skills add mocasus/paleo
 gemini extensions install https://github.com/mocasus/paleo
 
 # Hermes Agent
-cp -r skills/paleo skills/paleo-trim-context skills/paleo-skip-preamble skills/paleo-budget skills/paleo-converse skills/paleo-summary skills/paleo-json ~/.hermes/skills/
+cp -r skills/paleo skills/paleo-trim-context skills/paleo-budget skills/paleo-converse skills/paleo-summary skills/paleo-json ~/.hermes/skills/
 ```
 
-All 7 skills load automatically — `paleo`, `paleo-trim-context`, `paleo-skip-preamble`, `paleo-budget`, `paleo-converse`, `paleo-summary`, `paleo-json`.
+All 6 skills load automatically — `paleo`, `paleo-trim-context`, `paleo-budget`, `paleo-converse`, `paleo-summary`, `paleo-json`.
 
 > Full per-agent steps in [INSTALL.md](./INSTALL.md). See real compression numbers in [BENCHMARK.md](./BENCHMARK.md).
 
@@ -195,6 +193,6 @@ MIT — see [LICENSE](./LICENSE).
 
 **Kliqo.co** sponsors paleo · <a href="https://kliqo.co">kliqo.co</a>
 
-🦴 paleo · v2.4.0 · MIT
+🦴 paleo · v2.4.1 · MIT
 
 </div>
