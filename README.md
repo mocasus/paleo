@@ -221,8 +221,8 @@ claude plugin install paleo@paleo
 # Codex / Cursor / Windsurf / 40+ agents (npx skills registry)
 npx skills add mocasus/paleo
 
-# Gemini CLI
-gemini extensions install https://github.com/mocasus/paleo
+# Gemini CLI (native Agent Skills — auto-discovered from ~/.gemini/skills/)
+mkdir -p ~/.gemini/skills && cp -r skills/* ~/.gemini/skills/
 
 # Hermes Agent
 cp -r skills/paleo skills/paleo-trim-context skills/paleo-budget skills/paleo-converse skills/paleo-summary skills/paleo-json ~/.hermes/skills/
@@ -237,7 +237,7 @@ All 6 skills load automatically — `paleo`, `paleo-trim-context`, `paleo-budget
 paleo is open — wire your own token-saving skills:
 
 1. `skills/<your-name>/SKILL.md` with `name` + `description` frontmatter.
-2. Register in `.claude-plugin/plugin.json` + `gemini-extension.json`.
+2. Add the skills directory to `.claude-plugin/plugin.json` — the `skills` field is a path **string** (e.g. `"./skills/"`), not an array. Gemini + other agents pick skills up natively; no extra manifest needed.
 3. Bump version badge (this file + footer) + plugin `version`.
 4. Commit + push.
 
