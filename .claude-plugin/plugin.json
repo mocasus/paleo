@@ -1,0 +1,13 @@
+{
+  "name": "paleo",
+  "version": "1.0.0",
+  "description": "🪨 paleo — personal multi-agent skill collection by mocasus (Claude Code / Codex / Gemini / Hermes).",
+  "author": "mocasus",
+  "homepage": "https://github.com/mocasus/paleo",
+  "skills": [
+    {
+      "name": "tg-leave-by-keyword",
+      "source": "./skills/tg-leave-by-keyword"
+    }
+  ]
+}

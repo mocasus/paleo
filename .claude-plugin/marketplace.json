@@ -1,0 +1,10 @@
+{
+  "name": "paleo",
+  "owner": "mocasus",
+  "plugins": [
+    {
+      "name": "paleo",
+      "source": "./plugin.json"
+    }
+  ]
+}
