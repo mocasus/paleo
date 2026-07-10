@@ -1,0 +1,57 @@
+{
+  "model": "claude-sonnet-4.5",
+  "runs": 1,
+  "tasks": 6,
+  "median_savings_pct": 53.8,
+  "mean_savings_pct": 45.1,
+  "rows": [
+    {
+      "task": "Explain how OAuth 2.0 authorization code flow wo\u2026",
+      "baseline_delivery_tokens": 453,
+      "paleo_delivery_tokens": 409,
+      "savings_pct": 9.7,
+      "baseline_api_tokens": 454,
+      "paleo_api_tokens": 410
+    },
+    {
+      "task": "Write a Python function to parse a CSV file into\u2026",
+      "baseline_delivery_tokens": 276,
+      "paleo_delivery_tokens": 117,
+      "savings_pct": 57.6,
+      "baseline_api_tokens": 277,
+      "paleo_api_tokens": 119
+    },
+    {
+      "task": "Summarize the trade-offs between REST and GraphQ\u2026",
+      "baseline_delivery_tokens": 412,
+      "paleo_delivery_tokens": 189,
+      "savings_pct": 54.1,
+      "baseline_api_tokens": 413,
+      "paleo_api_tokens": 189
+    },
+    {
+      "task": "Walk me through setting up a CI pipeline with Gi\u2026",
+      "baseline_delivery_tokens": 1326,
+      "paleo_delivery_tokens": 277,
+      "savings_pct": 79.1,
+      "baseline_api_tokens": 1327,
+      "paleo_api_tokens": 277
+    },
+    {
+      "task": "What are the differences between processes, thre\u2026",
+      "baseline_delivery_tokens": 709,
+      "paleo_delivery_tokens": 330,
+      "savings_pct": 53.5,
+      "baseline_api_tokens": 710,
+      "paleo_api_tokens": 331
+    },
+    {
+      "task": "Explain the difference between TCP and UDP, and \u2026",
+      "baseline_delivery_tokens": 261,
+      "paleo_delivery_tokens": 217,
+      "savings_pct": 16.9,
+      "baseline_api_tokens": 262,
+      "paleo_api_tokens": 217
+    }
+  ]
+}

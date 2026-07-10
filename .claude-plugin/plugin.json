@@ -1,6 +1,6 @@
 {
   "name": "paleo",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "🦴 paleo — personal token-saving skill collection (Claude Code / Codex / Gemini / Hermes). Compress output, trim context, skip preamble, cap token budget.",
   "homepage": "https://github.com/mocasus/paleo",
   "skills": [

@@ -1,4 +1,4 @@
-![version](https://img.shields.io/badge/version-2.2.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![tokens saved](https://img.shields.io/badge/tokens%20saved-%7E65%25-brightgreen) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
+![version](https://img.shields.io/badge/version-2.3.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![tokens saved](https://img.shields.io/badge/tokens%20saved-%7E54%25-brightgreen) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
 
 <p align="center"><img src="./assets/logo.jpg" alt="paleo" width="460"></p>
 
@@ -38,7 +38,7 @@ Each skill lives in `skills/<name>/SKILL.md` with `name` + `description` frontma
 ## Features
 
 - [x] **Modular & composable** — load one skill or all four, mix per task.
-- [x] **Output + context savings** — ~60–70% fewer output tokens, plus proactive context trimming.
+- [x] **Output + context savings** — ~50–70% fewer output tokens (median ~54% on a 6-task sample — see [BENCHMARK.md](./BENCHMARK.md)), plus proactive context trimming.
 - [x] **Production-safe** — compresses output and context only; never rewrites your code.
 - [x] **Hard token budget** — `paleo-budget` caps spend and summarizes the tail.
 - [x] **Cross-agent** — works on Claude Code, Codex, Gemini CLI, and Hermes Agent.
@@ -50,7 +50,7 @@ Each skill lives in `skills/<name>/SKILL.md` with `name` + `description` frontma
 
 | Skill | What it does | Trigger example |
 |---|---|---|
-| `paleo` | Terse output mode — cut output tokens ~60–70%, keep code/terms exact. | `paleo mode` · `be brief` · `save tokens` |
+| `paleo` | Terse output mode — cut output tokens ~50–70%, keep code/terms exact. | `paleo mode` · `be brief` · `save tokens` |
 | `paleo-trim-context` | Proactively trim/summarize context to save tokens without losing task state. | `trim context` (auto on long sessions) |
 | `paleo-skip-preamble` | Strip greetings/apologies/hedging from replies. | auto on every reply |
 | `paleo-budget` | Hard token budget per task — cap spend, summarize if exceeded. | `budget 2000` · `stay under 2000 tokens` |
@@ -177,4 +177,4 @@ MIT — see [LICENSE](./LICENSE).
 
 <p align="center"><b>Kliqo.co</b> sponsors paleo · <a href="https://kliqo.co">kliqo.co</a></p>
 
-<p align="center">🦴 paleo · v2.2.0 · MIT</p>
+<p align="center">🦴 paleo · v2.3.0 · MIT</p>
