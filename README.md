@@ -1,5 +1,7 @@
 ![version](https://img.shields.io/badge/version-2.1.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
 
+<p align="center"><img src="./assets/logo.png" alt="paleo" width="420"></p>
+
 # 🪨 paleo
 
 Personal, public **token-saving** skill collection by **mocasus** — works on Claude Code, Codex, Gemini CLI, Hermes Agent. Same spirit as *caveman*: cut LLM token use. But paleo is my own toolbox of skills whose job is to save tokens — compress output, trim context, skip filler, cap budget.
