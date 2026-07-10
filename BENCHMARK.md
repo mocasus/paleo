@@ -32,7 +32,7 @@ Mean savings: **45.1%** · Median: **53.8%** · Raw data: [`bench/results.json`]
 
 - paleo saves the **most on verbose generative tasks** — code, walkthroughs, comparisons (54–79%). It saves less on already-compact factual answers (10–17%), because there is simply less fluff to cut. That is expected and honest.
 - **Headline claim:** *~50–70% fewer output tokens on typical agent tasks; median ~54% on this sample.* Not a flat "65%."
-- **On top of output savings**, `paleo-trim-context` cuts *context* tokens (retrieved docs, old tool output, long file dumps) **before** the model reasons — a layer Caveman cannot reach. That saving is task-dependent and is not captured in this output-only benchmark.
+- **On top of output savings**, `paleo-trim-context` cuts *context* tokens (retrieved docs, old tool output, long file dumps) **before** the model reasons — a layer a terse-persona prompt cannot reach. That saving is task-dependent and is not captured in this output-only benchmark.
 
 ## Reproduce it yourself
 
@@ -44,7 +44,7 @@ python3 bench/benchmark.py --model deepseek-v4-flash --runs 3   # average 3 runs
 
 Results are written to `bench/results.json`. Swap `--model` to compare on your own stack.
 
-## vs Caveman / Ponytail
+## vs terse-persona / Ponytail
 
-- **Caveman** advertises "up to 75%" from a single terse-persona prompt. Our measurement is more conservative and *per-task transparent* — and paleo additionally ships context-trimming and a hard budget Caveman lacks.
+- **Terse-persona prompts** advertise "up to 75%" from a single terse-persona prompt. Our measurement is more conservative and *per-task transparent* — and paleo additionally ships context-trimming and a hard budget they lack.
 - **Ponytail** saves *code volume* by refactoring what the agent writes (it touches your codebase). paleo saves *conversation + context tokens* with zero code changes. Different layers — use both.

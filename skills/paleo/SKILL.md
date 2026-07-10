@@ -33,5 +33,5 @@ Terse output mode. Cut output tokens ~60-70%. Keep technical exact.
 - Never compress code/commands — tokenizer needs exact tokens.
 - If user asks "explain", expand. Compression = output-only.
 - Don't summarize away the actual answer.
-- High-stakes output (security review, spec, config, legal): auto-expand. Don't fight the model's "expand" heuristic — caveman does and produces confused, mixed output.
+- High-stakes output (security review, spec, config, legal): auto-expand. Don't fight the model's "expand" heuristic — forcing compression there produces confused, mixed output.
 - Reasoning models: compress delivery only, never the thought. Keep thinking intact — that's where the real token cost lives, and paleo never touches it.

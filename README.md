@@ -101,13 +101,13 @@ python3 bench/benchmark.py --model claude-sonnet-4.5
 ```
 
 > [!TIP]
-> Savings are task-dependent: biggest on verbose generative work (code, walkthroughs, comparisons — 54–79%), smaller on already-compact factual answers. paleo also cuts *context* tokens via `paleo-trim-context`, a layer Caveman cannot reach.
+> Savings are task-dependent: biggest on verbose generative work (code, walkthroughs, comparisons — 54–79%), smaller on already-compact factual answers. paleo also cuts *context* tokens via `paleo-trim-context`, a layer a terse-persona prompt cannot reach.
 
 ## Comparison
 
-paleo is often compared with two other token-saving approaches: **Caveman** (a terse-persona system prompt) and **Ponytail** (a code-reuse coding skill). Here is how they differ.
+paleo is often compared with two other token-saving approachesa **terse-persona system prompt** and **Ponytail** (a code-reuse coding skill). Here is how they differ.
 
-| Dimension | 🦴 paleo | Caveman | Ponytail |
+| Dimension | 🦴 paleo | Terse-persona prompt | Ponytail |
 |---|---|---|---|
 | **Form** | 6 composable skills | Single system prompt (persona) | Single coding skill / workflow |
 | **What it targets** | Output tokens **+** context **+** conversation turns | Output tokens only | Volume of code the agent writes (+ MCP caching) |
@@ -122,7 +122,7 @@ paleo is often compared with two other token-saving approaches: **Caveman** (a t
 | **Open benchmark** | ✅ Reproducible harness | ❌ Claim only | ❌ Claim only |
 
 > [!TIP]
-> **They're complementary, not rivals.** Ponytail cuts the *code you have to write*; paleo cuts the *tokens in the conversation*. Caveman proved a terse prompt helps output — paleo takes that same idea and makes it modular, adds context-trimming and a hard budget, and drops the caveman persona. Use Ponytail for code-heavy work and paleo for chatty, long sessions.
+> **They're complementary, not rivals.** Ponytail cuts the *code you have to write*; paleo cuts the *tokens in the conversation*. Terse-persona prompts proved a terse prompt helps output — paleo takes that same idea and makes it modular, adds context-trimming and a hard budget, and drops the persona gimmick. Use Ponytail for code-heavy work and paleo for chatty, long sessions.
 
 ## Tips & Triggers
 

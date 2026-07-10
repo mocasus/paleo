@@ -9,7 +9,7 @@ Draft social posts to drive stars/adoption. Copy-paste ready.
 **1/**
 🦴 paleo — token-saving skills for LLM agents.
 Cut output & context tokens without choking the model.
-No caveman persona. No code rewrite. Measured, not claimed. 🧵
+No persona gimmicks. No code rewrite. Measured, not claimed. 🧵
 
 **2/**
 The problem: agents burn tokens on filler, preamble, and bloated context.
@@ -33,7 +33,7 @@ We measured it.
 Reproducible: `python3 bench/benchmark.py`
 
 **6/**
-Caveman claims 30–40% on output. Ponytail does conversation-only.
+Terse-persona prompts claim 30–40% on output. Ponytail does conversation-only.
 paleo does output + context + hard budget.
 And we open the benchmark. They don't.
 
