@@ -19,22 +19,22 @@ Each skill = `skills/<name>/SKILL.md` with `name` + `description` frontmatter (l
 ## Install
 
 ```bash
-# Claude Code
-claude plugin marketplace add mocasus/paleo
-claude plugin install paleo-compress@paleo
-claude plugin install paleo-trim-context@paleo
-claude plugin install paleo-skip-preamble@paleo
+# Universal (any agent) — clone + copy skills manually
+git clone https://github.com/mocasus/paleo.git
+# copy skills/paleo-*/ into your agent's skills directory
 
-# Universal (Codex / Cursor / Windsurf / 30+ agents)
+# Claude Code (one plugin bundles all 3 skills)
+claude plugin marketplace add https://github.com/mocasus/paleo
+claude plugin install paleo@paleo
+
+# Codex / Cursor / Windsurf / 30+ agents (npx skills registry)
 npx skills add mocasus/paleo
 
 # Gemini CLI
 gemini extensions install https://github.com/mocasus/paleo
 
 # Hermes Agent
-cp -r skills/paleo-compress ~/.hermes/skills/software-development/
-cp -r skills/paleo-trim-context ~/.hermes/skills/software-development/
-cp -r skills/paleo-skip-preamble ~/.hermes/skills/software-development/
+cp -r skills/paleo-compress skills/paleo-trim-context skills/paleo-skip-preamble ~/.hermes/skills/
 ```
 
 ## Add a skill
