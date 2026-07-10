@@ -18,6 +18,8 @@ Keep context small. Drop stale, keep task state.
 - Keep: current plan, open TODO, key IDs/paths, last decision.
 - Use session_search / notes for history instead of re-pasting.
 - Prefer code/script over long prose explanations in context.
+- Pre-thinking compression (biggest savings): BEFORE the model reasons, compress retrieved docs / RAG context / long file dumps into key facts + a source pointer. Drop full-doc dumps — caveman can't reach this layer.
+- Effort pinning: trivial task -> signal low effort, no over-think. Reuse a prior conclusion instead of re-reasoning the same thing.
 
 ## When
 - Long session (>20 turns), big file dumps, repeated similar output.

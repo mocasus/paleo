@@ -89,6 +89,7 @@ paleo is often compared with two other token-saving approaches: **Caveman** (a t
 | **Hard budget** | ✅ `paleo-budget` | ❌ | ❌ |
 | **Cross-agent** | ✅ Claude / Codex / Gemini / Hermes | ➖ Portable prompt, but monolithic | ➖ Claude Code skill |
 | **Activation** | Plain phrases | Edit system prompt | Install + invoke skill |
+| **Reasoning-model safe** | ✅ Never compresses thought | ❌ Can *raise* tokens (e.g. +3% on Opus) | ➖ |
 | **Known risk** | None (output-only) | Can fight "expand" heuristics; may *raise* tokens on reasoning models | Refactor can change behavior |
 
 > [!TIP]
