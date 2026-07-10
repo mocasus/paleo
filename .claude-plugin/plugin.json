@@ -1,12 +1,12 @@
 {
   "name": "paleo",
-  "version": "1.3.0",
-  "description": "🪨 paleo — personal multi-agent skill collection by mocasus (Claude Code / Codex / Gemini / Hermes). Token-minimal, caveman-compressed skills.",
+  "version": "2.0.0",
+  "description": "🪨 paleo — personal token-saving skill collection by mocasus (Claude Code / Codex / Gemini / Hermes). Compress output, trim context, skip preamble.",
   "author": "mocasus",
   "homepage": "https://github.com/mocasus/paleo",
   "skills": [
-    { "name": "tg-leave-by-keyword", "source": "./skills/tg-leave-by-keyword" },
-    { "name": "tg-fetch-post", "source": "./skills/tg-fetch-post" },
-    { "name": "tg-list-dialogs", "source": "./skills/tg-list-dialogs" }
+    { "name": "paleo-compress", "source": "./skills/paleo-compress" },
+    { "name": "paleo-trim-context", "source": "./skills/paleo-trim-context" },
+    { "name": "paleo-skip-preamble", "source": "./skills/paleo-skip-preamble" }
   ]
 }

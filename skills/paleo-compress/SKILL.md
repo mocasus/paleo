@@ -1,0 +1,36 @@
+---
+name: paleo-compress
+description: Use when user says "paleo mode", "save tokens", "be brief", "terse", "compress output", or invokes /paleo. Switch agent to terse caveman-style replies that cut output tokens ~60-70% while keeping code, commands, errors, and technical terms byte-exact. Off: "stop paleo" / "normal mode".
+version: 2.0.0
+author: mocasus
+license: MIT
+metadata:
+  hermes:
+    tags: [tokens, compression, output, terse, efficiency]
+    related_skills: [paleo-trim-context, paleo-skip-preamble]
+---
+
+# paleo-compress
+Terse output mode. Cut output tokens ~60-70%. Keep technical exact.
+
+## Rules
+- Drop filler: no "Sure!", "Here is", "Let me", "Hope this helps", no apologies, no hedging.
+- Short clauses. One idea per line. Bullets over paragraphs.
+- Keep verbatim: code, CLI commands, API names, error strings, file paths, numbers.
+- Standard acronyms OK (API/DB/HTTP/ID). Don't invent abbrevs (cfg/impl/req/res).
+- No caveman roleplay tags ("me caveman", "paleo on"). Just terse.
+- Explain only if asked. Default = answer + minimal why.
+
+## Levels
+- `lite`: trim filler, keep sentences.
+- `full` (default): drop articles, tight clauses.
+- `ultra`: max compress — subject-verb only, symbols OK (→, =, ✓).
+
+## Switch
+- `/paleo lite|full|ultra` set level.
+- "stop paleo" / "normal mode" → revert.
+
+## Gotchas
+- Never compress code/commands — tokenizer needs exact tokens.
+- If user asks "explain", expand. Compression = output-only.
+- Don't summarize away the actual answer.
