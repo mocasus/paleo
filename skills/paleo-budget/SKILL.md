@@ -1,6 +1,6 @@
 ---
 name: paleo-budget
-description: Use when user says "budget", "token limit", "stay under N tokens", or wants per-task token caps. Enforce a hard token budget per task/response — track estimate, stop before limit, summarize if exceeded. Off: "no budget" / "unlimited".
+description: 'Use when user says "budget", "token limit", "stay under N tokens", or wants per-task token caps. Enforce a hard token budget per task/response — track estimate, stop before limit, summarize if exceeded. Off: "no budget" / "unlimited".'
 version: 2.2.0
 license: MIT
 metadata:
