@@ -25,6 +25,24 @@ Each skill lives in `skills/<name>/SKILL.md` with `name` + `description` frontma
 | `paleo-skip-preamble` | Strip greetings/apologies/hedging from replies. |
 | `paleo-budget` | Hard token budget per task — cap spend, summarize if exceeded. |
 
+## Tips
+
+> paleo is opt-in per message. Switch levels anytime; revert with "stop paleo".
+
+<details>
+<summary>Quick command reference</summary>
+
+- `paleo` / `/paleo full` — terse default mode (≈60% out tokens)
+- `/paleo lite` — trim filler, keep sentences
+- `/paleo ultra` — max compress (symbols, subject-verb)
+- `stop paleo` / `normal mode` — revert to verbose
+- `budget 2000` — hard cap ~2000 out-tokens for the task
+- `no budget` / `unlimited` — turn budget off
+
+**Combo:** `paleo` + `paleo-budget` = max savings. On long sessions add `paleo-trim-context` to shrink context too.
+
+</details>
+
 ## Install
 
 ```bash
@@ -66,5 +84,13 @@ No repo edit needed — just drop any `SKILL.md` into your agent's skills dir (e
 MIT — see [LICENSE](./LICENSE).
 
 ---
+
+## Sponsors
+
+<p align="center">
+  <a href="https://kliqo.co"><img src="./assets/kliqo-banner.jpg" alt="Kliqo.co" width="420"></a>
+</p>
+
+<p align="center"><b>Kliqo.co</b> sponsors paleo · <a href="https://kliqo.co">kliqo.co</a></p>
 
 <p align="center">🦴 paleo · v2.2.0 · MIT</p>
