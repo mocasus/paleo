@@ -1,6 +1,9 @@
 {
   "name": "paleo",
-  "owner": "mocasus",
+  "owner": {
+    "name": "mocasus",
+    "url": "https://github.com/mocasus"
+  },
   "plugins": [
     {
       "name": "paleo",
