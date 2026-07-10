@@ -25,44 +25,60 @@
   body { margin: 0; }
   *, *::before, *::after { box-sizing: border-box; }
   ::selection { background: #e4e2db; }
-  .fluid-metric { font-size: clamp(3.5rem, 14vw, 6rem); line-height: 1; letter-spacing: -0.03em; }
+  .fluid-metric { font-size: clamp(3.25rem, 13vw, 5.5rem); line-height: 1; letter-spacing: -0.03em; }
   .demo-code { font-size: clamp(0.78rem, 2.6vw, 0.9rem); }
   .install-code { font-size: clamp(0.78rem, 2.6vw, 0.9rem); }
 </style>
 </head>
 <body class="bg-cream text-ink font-sans antialiased">
-<main class="mx-auto max-w-[42rem] px-6 sm:px-8 py-16 sm:py-24">
+<main class="mx-auto max-w-[42rem] px-6 sm:px-8 py-14 sm:py-20">
 
-  <!-- Header -->
-  <header class="flex items-center justify-between gap-4 flex-wrap">
-    <div class="flex items-center gap-3">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line font-serif text-lg italic">p</span>
-      <h1 class="font-serif italic font-medium text-2xl m-0">paleo</h1>
-    </div>
-    <div class="flex items-center gap-2 font-mono text-[11px] text-ink/50">
+  <!-- Masthead -->
+  <header class="text-center">
+    <img src="logo.jpg" alt="paleo" class="mx-auto h-28 w-28 rounded-2xl object-contain border border-line">
+    <div class="mt-4 flex justify-center gap-2 font-mono text-[11px] text-ink/50">
       <span class="px-2 py-1 rounded border border-line">v2.3.0</span>
       <span class="px-2 py-1 rounded border border-line">MIT</span>
       <span class="px-2 py-1 rounded border border-line">~3.5k chars</span>
     </div>
   </header>
 
-  <!-- Intro -->
-  <p class="mt-10 text-[15px] leading-relaxed text-ink/70 max-w-[34rem]">
-    Token-saving skills for LLM agents. Cut output and context tokens without choking the model. No caveman persona. <span class="font-serif italic">Measured, not claimed.</span>
+  <!-- Lede -->
+  <p class="mt-10 text-center font-serif italic text-[1.7rem] leading-snug text-ink max-w-[34rem] mx-auto">
+    Token-saving skills for LLM agents.
+  </p>
+  <p class="mt-3 text-center text-[15px] text-ink/65 max-w-[34rem] mx-auto leading-relaxed">
+    Cut output and context tokens without choking the model. No caveman persona. <span class="font-serif italic">Measured, not claimed.</span>
   </p>
 
-  <!-- Core Value Metric -->
-  <section class="mt-16 border-t border-line pt-12">
-    <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40">Median output-token reduction</p>
-    <div class="fluid-metric font-serif font-medium mt-2">53.8%</div>
-    <p class="mt-4 text-ink/60 text-sm leading-relaxed max-w-[32rem]">
-      vs a verbose baseline across a 10-turn synthetic harness — with <span class="font-medium text-ink">zero correctness regression</span> on a reasoning model.
+  <!-- Abstract -->
+  <section class="mt-10 bg-tint border border-line rounded-lg p-5 sm:p-6">
+    <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40 mb-3">Abstract</p>
+    <p class="m-0 text-[15px] leading-relaxed text-ink/75">
+      Four modular skills compress agent verbosity, trim context before overflow, strip preamble, and enforce a hard token budget — without altering code or numbers. In a 10-turn synthetic harness the median output dropped <span class="font-medium text-ink">53.8%</span> with zero correctness regression on a reasoning model. The benchmark is reproducible.
     </p>
   </section>
 
-  <!-- Capabilities -->
+  <!-- §01 Metric -->
   <section class="mt-16 border-t border-line pt-12">
-    <h2 class="font-serif text-xl font-medium mb-6">Capabilities</h2>
+    <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40">§01 — Output reduction</p>
+    <div class="fluid-metric font-serif font-medium mt-3">53.8%</div>
+    <p class="mt-4 text-ink/60 text-sm leading-relaxed max-w-[32rem]">
+      median reduction vs a verbose baseline across a 10-turn synthetic harness.
+    </p>
+    <div class="mt-6 h-2 w-full bg-tint rounded-full overflow-hidden border border-line">
+      <div class="h-full bg-ink" style="width:53.8%"></div>
+    </div>
+    <div class="mt-2 flex justify-between font-mono text-[11px] text-ink/40">
+      <span>0%</span><span>53.8% saved</span><span>100%</span>
+    </div>
+    <p class="mt-4 font-mono text-[11px] text-ink/40">reproducible · <span class="text-ink/60">python3 bench/benchmark.py</span></p>
+  </section>
+
+  <!-- §02 Capabilities -->
+  <section class="mt-16 border-t border-line pt-12">
+    <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40">§02 — Capabilities</p>
+    <h2 class="font-serif text-xl font-medium mt-3 mb-6">Four skills, one goal</h2>
     <ul class="space-y-0">
       <li class="border-l-2 border-line pl-4 py-3">
         <span class="font-mono text-sm text-ink">paleo</span>
@@ -83,16 +99,17 @@
     </ul>
   </section>
 
-  <!-- Comparison -->
+  <!-- §03 Comparison -->
   <section class="mt-16 border-t border-line pt-12">
-    <h2 class="font-serif text-xl font-medium mb-6">Behavioral difference</h2>
+    <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40">§03 — Behavioral difference</p>
+    <h2 class="font-serif text-xl font-medium mt-3 mb-6">Same answer, fewer words</h2>
     <div class="bg-tint rounded-lg p-5 sm:p-6 border border-line">
       <div class="grid sm:grid-cols-2 gap-5">
         <div>
           <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40 mb-2">Standard</p>
           <p class="text-sm text-ink/70 leading-relaxed m-0">“Great question! Let me help you with that. Here is how you can approach this problem…”</p>
         </div>
-        <div>
+        <div class="sm:border-l sm:border-line sm:pl-5">
           <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40 mb-2">paleo</p>
           <p class="text-sm text-ink leading-relaxed m-0 font-medium">Direct answer. Code stays 100% exact.</p>
           <pre class="demo-code font-mono text-ink/80 mt-3 overflow-x-auto m-0"><code>function forceRerender(){
@@ -103,9 +120,10 @@
     </div>
   </section>
 
-  <!-- Installation -->
+  <!-- §04 Install -->
   <section class="mt-16 border-t border-line pt-12">
-    <h2 class="font-serif text-xl font-medium mb-6">Install</h2>
+    <p class="font-mono text-[11px] uppercase tracking-widest text-ink/40">§04 — Install</p>
+    <h2 class="font-serif text-xl font-medium mt-3 mb-6">One line, any agent</h2>
     <div class="bg-ink rounded-lg p-5 sm:p-6 text-[#e8e4d8]">
       <pre class="install-code font-mono leading-relaxed overflow-x-auto m-0"><code># Claude Code
 mkdir -p ~/.claude/skills &amp;&amp; \
@@ -114,7 +132,7 @@ mkdir -p ~/.claude/skills &amp;&amp; \
 # Any agent — one-liner
 npx skills add mocasus/paleo</code></pre>
     </div>
-    <p class="mt-3 font-mono text-[11px] text-ink/40">Works with Claude Code, Codex, Gemini CLI, OpenCode, Qwen Code + 40 agents.</p>
+    <p class="mt-3 font-mono text-[11px] text-ink/40">Claude Code · Codex · Gemini CLI · OpenCode · Qwen Code + 40 agents.</p>
   </section>
 
   <!-- Footer -->
