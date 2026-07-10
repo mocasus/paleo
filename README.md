@@ -48,7 +48,7 @@ cp -r skills/paleo skills/paleo-trim-context skills/paleo-skip-preamble skills/p
 
 All 4 skills load automatically — `paleo`, `paleo-trim-context`, `paleo-skip-preamble`, `paleo-budget`.
 
-> Full per-agent steps in [INSTALL.md](./INSTALL.md).
+> Full per-agent steps in [INSTALL.md](./INSTALL.md). See real compression numbers in [BENCHMARK.md](./BENCHMARK.md).
 
 ## Custom skills
 
