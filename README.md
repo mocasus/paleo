@@ -27,19 +27,24 @@ Each skill lives in `skills/<name>/SKILL.md` with `name` + `description` frontma
 
 ## Tips
 
-> paleo is opt-in per message. Switch levels anytime; revert with "stop paleo".
+> paleo activates from natural-language triggers — no slash command to register. Type the trigger, the skill loads and applies.
 
 <details>
-<summary>Quick command reference</summary>
+<summary>Activation & switches (plain phrases)</summary>
 
-- `paleo` / `/paleo full` — terse default mode (≈60% out tokens)
-- `/paleo lite` — trim filler, keep sentences
-- `/paleo ultra` — max compress (symbols, subject-verb)
-- `stop paleo` / `normal mode` — revert to verbose
-- `budget 2000` — hard cap ~2000 out-tokens for the task
-- `no budget` / `unlimited` — turn budget off
+**paleo** — terse output
+- On: `paleo mode` · `be brief` · `terse` · `compress output` · `save tokens`
+- Level: `paleo full` (default) · `paleo lite` · `paleo ultra`
+- Off: `stop paleo` · `normal mode`
 
-**Combo:** `paleo` + `paleo-budget` = max savings. On long sessions add `paleo-trim-context` to shrink context too.
+**paleo-budget** — token cap
+- On: `budget 2000` · `stay under 2000 tokens` · `token limit`
+- Off: `no budget` · `unlimited`
+
+**paleo-trim-context** — auto on long sessions; `trim context` to force.
+**paleo-skip-preamble** — auto on every reply.
+
+**Combo:** `paleo` + `paleo-budget` = max savings. Add `paleo-trim-context` on long sessions.
 
 </details>
 

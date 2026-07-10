@@ -1,6 +1,6 @@
 ---
 name: paleo
-description: 'Use when user says "paleo mode", "save tokens", "be brief", "terse", "compress output", or invokes /paleo. Switch agent to terse replies that cut output tokens ~60-70% while keeping code, commands, errors, and technical terms byte-exact. Off: "stop paleo" / "normal mode".'
+description: 'Use when user says "paleo mode", "save tokens", "be brief", "terse", "compress output", or says "paleo". Switch agent to terse replies that cut output tokens ~60-70% while keeping code, commands, errors, and technical terms byte-exact. Off: "stop paleo" / "normal mode".'
 version: 2.2.0
 license: MIT
 metadata:
@@ -26,7 +26,7 @@ Terse output mode. Cut output tokens ~60-70%. Keep technical exact.
 - `ultra`: max compress — subject-verb only, symbols OK (→, =, ✓).
 
 ## Switch
-- `/paleo lite|full|ultra` set level.
+- `paleo lite|full|ultra` set level (or "paleo ultra mode").
 - "stop paleo" / "normal mode" → revert.
 
 ## Gotchas
