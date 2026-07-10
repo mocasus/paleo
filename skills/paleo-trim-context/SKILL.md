@@ -7,7 +7,7 @@ license: MIT
 metadata:
   hermes:
     tags: [tokens, context, trim, summarize, efficiency]
-    related_skills: [paleo-compress, paleo-skip-preamble]
+    related_skills: [paleo, paleo-skip-preamble]
 ---
 
 # paleo-trim-context

@@ -1,13 +1,13 @@
 ---
 name: paleo-skip-preamble
-description: Use when generating any reply. Strip greetings, apologies, hedging, and meta-commentary to save output tokens. Pair with paleo-compress.
+description: Use when generating any reply. Strip greetings, apologies, hedging, and meta-commentary to save output tokens. Pair with paleo.
 version: 2.0.0
 author: mocasus
 license: MIT
 metadata:
   hermes:
     tags: [tokens, output, preamble, filler, efficiency]
-    related_skills: [paleo-compress, paleo-trim-context]
+    related_skills: [paleo, paleo-trim-context]
 ---
 
 # paleo-skip-preamble

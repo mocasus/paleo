@@ -1,7 +1,7 @@
 ---
-name: paleo-compress
+name: paleo
 description: Use when user says "paleo mode", "save tokens", "be brief", "terse", "compress output", or invokes /paleo. Switch agent to terse caveman-style replies that cut output tokens ~60-70% while keeping code, commands, errors, and technical terms byte-exact. Off: "stop paleo" / "normal mode".
-version: 2.0.0
+version: 2.1.0
 author: mocasus
 license: MIT
 metadata:
@@ -10,7 +10,7 @@ metadata:
     related_skills: [paleo-trim-context, paleo-skip-preamble]
 ---
 
-# paleo-compress
+# paleo
 Terse output mode. Cut output tokens ~60-70%. Keep technical exact.
 
 ## Rules
