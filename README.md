@@ -1,39 +1,34 @@
+<div align="center">
+
 ![version](https://img.shields.io/badge/version-2.3.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-4-orange) ![tokens saved](https://img.shields.io/badge/tokens%20saved-%7E54%25-brightgreen) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
 
-<p align="center"><img src="./assets/logo.jpg" alt="paleo" width="460"></p>
+<img src="./assets/logo.jpg" alt="paleo" width="420">
 
 # 🦴 paleo
 
-> [!NOTE]
-> **Token-saving skill collection for LLM agents.** Cut token use, keep output exact — no code rewrites, no persona gimmicks.
+**Token-saving skill collection for LLM agents. Cut token use, keep output exact — modular skills, not a caveman persona, and never a rewrite of your code.**
 
-**paleo** is a small, focused toolkit of skills that makes any LLM agent spend fewer tokens — without dumbing down the work. It runs on Claude Code, Codex, Gemini CLI, and Hermes Agent. Instead of one vague *"be concise"* instruction, paleo splits token-saving into composable skills you switch on per task.
+[Why](#why-paleo) · [See it](#see-it-before--after) · [Features](#features) · [Skills](#skills) · [Quick Start](#quick-start) · [Benchmarks](#benchmarks) · [Comparison](#comparison) · [Tips](#tips--triggers) · [Install](#installation)
 
-## Table of Contents
+</div>
 
-- [Overview](#overview)
-- [Features](#features)
-- [Skills](#skills)
-- [Quick Start](#quick-start)
-- [Comparison](#comparison)
-- [Tips & Triggers](#tips--triggers)
-- [Installation](#installation)
-- [Custom Skills](#custom-skills)
-- [Contributing](#contributing)
-- [License](#license)
-- [Sponsors](#sponsors)
-
-## Overview
-
-### Why paleo?
+## Why paleo?
 
 - **Tokens cost money and latency.** Every trimmed token means faster, cheaper inference.
 - **One-size-fits-all prompting fails.** Sometimes you want terse output, sometimes a hard budget, sometimes just no fluff. paleo gives each as a separate, well-scoped skill.
 - **Skills stay minimal.** Every `SKILL.md` is written terse on purpose — loading one costs less context than a long prompt.
 
-### How it works
+## See it (Before / After)
 
-Each skill lives in `skills/<name>/SKILL.md` with `name` + `description` frontmatter. Agents (Claude Code plugins, `npx skills` registry, Gemini extensions, Hermes) auto-discover and load the relevant skill when its trigger matches. Skills compose: run `paleo` together with `paleo-budget` for maximum savings, or use any single one standalone.
+paleo compresses *delivery*, not meaning. Code, commands, and technical terms stay byte-exact.
+
+| Normal agent | 🦴 paleo |
+|---|---|
+| "The re-render happens because you create a new object literal on every render. That inline object is a fresh reference each time, so React sees a changed prop and re-renders. Wrap it in `useMemo` to keep a stable reference." | "New object each render → new ref → re-render. Wrap in `useMemo`. Stable ref = no re-render." |
+| "To authenticate requests, add middleware that checks the token on each request and returns 401 if it is missing or expired." | "Add auth middleware. Check token per request. 401 if missing/expired." |
+
+> [!NOTE]
+> paleo keeps technical accuracy at 100% — it drops filler, not facts.
 
 ## Features
 
@@ -73,7 +68,23 @@ Then just talk to your agent — no command to register:
 
 > `paleo mode` · `save tokens` · `budget 2000` · `trim context`
 
-Full per-agent steps are in [INSTALL.md](./INSTALL.md). Real compression numbers are in [BENCHMARK.md](./BENCHMARK.md).
+## Benchmarks
+
+Real, reproducible numbers — not hand-waved claims.
+
+| Model | Tasks | Median output savings | Mean |
+|---|---|---|---|
+| `claude-sonnet-4.5` | 6 | **53.8%** | 45.1% |
+
+Full method, per-task table, and the runnable harness are in [BENCHMARK.md](./BENCHMARK.md). Rerun on your own stack:
+
+```bash
+export IDROUTER_API_KEY=your_key
+python3 bench/benchmark.py --model claude-sonnet-4.5
+```
+
+> [!TIP]
+> Savings are task-dependent: biggest on verbose generative work (code, walkthroughs, comparisons — 54–79%), smaller on already-compact factual answers. paleo also cuts *context* tokens via `paleo-trim-context`, a layer Caveman cannot reach.
 
 ## Comparison
 
@@ -91,6 +102,7 @@ paleo is often compared with two other token-saving approaches: **Caveman** (a t
 | **Activation** | Plain phrases | Edit system prompt | Install + invoke skill |
 | **Reasoning-model safe** | ✅ Never compresses thought | ❌ Can *raise* tokens (e.g. +3% on Opus) | ➖ |
 | **Known risk** | None (output-only) | Can fight "expand" heuristics; may *raise* tokens on reasoning models | Refactor can change behavior |
+| **Open benchmark** | ✅ Reproducible harness | ❌ Claim only | ❌ Claim only |
 
 > [!TIP]
 > **They're complementary, not rivals.** Ponytail cuts the *code you have to write*; paleo cuts the *tokens in the conversation*. Caveman proved a terse prompt helps output — paleo takes that same idea and makes it modular, adds context-trimming and a hard budget, and drops the caveman persona. Use Ponytail for code-heavy work and paleo for chatty, long sessions.
@@ -169,12 +181,14 @@ MIT — see [LICENSE](./LICENSE).
 
 ---
 
+<div align="center">
+
 ## Sponsors
 
-<p align="center">
-  <a href="https://kliqo.co"><img src="./assets/kliqo-banner.jpg" alt="Kliqo.co" width="420"></a>
-</p>
+<a href="https://kliqo.co"><img src="./assets/kliqo-banner.jpg" alt="Kliqo.co" width="420"></a>
 
-<p align="center"><b>Kliqo.co</b> sponsors paleo · <a href="https://kliqo.co">kliqo.co</a></p>
+**Kliqo.co** sponsors paleo · <a href="https://kliqo.co">kliqo.co</a>
 
-<p align="center">🦴 paleo · v2.3.0 · MIT</p>
+🦴 paleo · v2.3.0 · MIT
+
+</div>
