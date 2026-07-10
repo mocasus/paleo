@@ -1,11 +1,12 @@
 {
   "name": "paleo",
   "description": "🪨 paleo — personal multi-agent skill collection by mocasus.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "mocasus",
   "homepage": "https://github.com/mocasus/paleo",
   "skills": [
     "./skills/tg-leave-by-keyword",
-    "./skills/tg-fetch-post"
+    "./skills/tg-fetch-post",
+    "./skills/tg-list-dialogs"
   ]
 }

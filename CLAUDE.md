@@ -8,8 +8,7 @@
 - Never commit `.env` or `*.session` (git-ignored).
 
 ## Token budget (hard rule)
-Skills are loaded into the LLM context, so they MUST be token-minimal:
-- No filler prose, no restated intros, no redundant examples.
-- Keep code/commands byte-exact and necessary only.
-- Use terse bullets; one idea per line.
-- Smaller SKILL.md = cheaper + faster agents.
+Skills load into the LLM context, so they MUST be token-minimal:
+- Prose: caveman-compressed — drop filler/articles, short clauses, one idea per line.
+- Code + technical terms (API names, CLI commands, error strings) stay EXACT. Never abbreviate them.
+- No redundant examples. Smaller SKILL.md = cheaper + faster agents.

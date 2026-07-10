@@ -1,24 +1,24 @@
 ---
 name: tg-leave-by-keyword
 description: Use when user wants to bulk-leave Telegram groups/channels by keyword (e.g. "leave all roblox groups"). Enumerate via MTProto userbot, then LeaveChannelRequest with dry-run + confirm.
-version: 1.2.0
+version: 1.3.0
 author: mocasus
 license: MIT
 metadata:
   hermes:
     tags: [telegram, telethon, mtproto, cleanup, userbot]
-    related_skills: [tg-fetch-post]
+    related_skills: [tg-fetch-post, tg-list-dialogs]
 ---
 
 # tg-leave-by-keyword
-Bulk-leave Telegram groups/channels whose name/username contains a keyword, via MTProto userbot (Telethon). Groups + channels only.
+Bulk-leave TG groups/channels by keyword. MTProto userbot. Groups+channels only.
 
 ## Need
 - `pip install telethon python-dotenv`
-- `.session` user-account file + `.env` (`TELEGRAM_API_ID`, `TELEGRAM_API_HASH`)
-- Never commit `.env` / `*.session`.
+- `.session` user file + `.env` (`TELEGRAM_API_ID`, `TELEGRAM_API_HASH`)
+- Never commit `.env`/`*.session`
 
-## 1. Dry-run — enumerate matches
+## 1. Dry-run — find matches
 ```python
 import asyncio, os
 from dotenv import load_dotenv
@@ -79,7 +79,7 @@ asyncio.run(main())
 ```
 
 ## Gotchas
-- Bots/users: `LeaveChannelRequest` only works on groups + channels. Bot DM → block/delete instead; exclude `kind=="user"`.
-- FloodWait: space ~2s between leaves; honor the wait. Don't batch-leave 5+ on a primary account without confirm.
-- Wrong keyword: substring match can catch unintended groups — always dry-run first.
-- Primary account: heavy automation risks restriction; prefer a throwaway.
+- `LeaveChannelRequest` = groups+channels only. Bot DM → block/delete. Drop `kind=="user"`.
+- FloodWait: ~2s gap between leaves. No 5+ batch on main account w/o confirm.
+- Substring match catches wrong groups. Dry-run first.
+- Main account heavy use = ban risk. Use throwaway.

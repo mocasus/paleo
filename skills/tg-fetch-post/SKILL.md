@@ -1,24 +1,24 @@
 ---
 name: tg-fetch-post
 description: Use when user pastes a t.me channel/post link (or channel + msg id) and wants the post extracted — text, linked URL/preview, inline buttons. Fetches via MTProto userbot (Telethon).
-version: 1.2.0
+version: 1.3.0
 author: mocasus
 license: MIT
 metadata:
   hermes:
     tags: [telegram, telethon, mtproto, fetch, scrape]
-    related_skills: [tg-leave-by-keyword]
+    related_skills: [tg-leave-by-keyword, tg-list-dialogs]
 ---
 
 # tg-fetch-post
-Extract a Telegram post's text, web-page preview (URL/title/desc), and inline buttons from a `t.me/<channel>/<id>` link or channel username + message id, via MTProto userbot (Telethon).
+Pull TG post text + webpage preview + buttons from `t.me/<channel>/<id>`. MTProto userbot.
 
 ## Need
 - `pip install telethon python-dotenv`
-- `.session` user-account file + `.env` (`TELEGRAM_API_ID`, `TELEGRAM_API_HASH`)
-- Never commit `.env` / `*.session`.
+- `.session` user file + `.env` (`TELEGRAM_API_ID`, `TELEGRAM_API_HASH`)
+- Never commit `.env`/`*.session`
 
-## Fetch (resolve entity first — URL lookups fail)
+## Fetch (resolve entity first)
 ```python
 import asyncio, os, re
 from dotenv import load_dotenv
@@ -50,7 +50,7 @@ asyncio.run(main())
 ```
 
 ## Gotchas
-- `get_messages("https://t.me/...")` → `ValueError: Cannot find any entity`. Always `get_entity(username)` first, then `get_messages(entity, ids=<id>)`.
-- A post has either inline buttons (`msg.buttons`) OR a web-page preview (`msg.media.webpage`) — check both.
-- Deleted/inaccessible id → `get_messages` returns `None`.
-- Cold `get_entity` may FloodWait (~seconds) after idle; retry after the wait.
+- `get_messages("https://t.me/...")` → `ValueError: Cannot find any entity`. `get_entity(username)` first.
+- Post = buttons (`msg.buttons`) OR webpage (`msg.media.webpage`). Check both.
+- Deleted/id gap → `get_messages` returns `None`.
+- Cold `get_entity` may FloodWait. Retry after wait.
