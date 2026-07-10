@@ -124,6 +124,64 @@ paleo is often compared with two other token-saving approachesa **terse-persona 
 > [!TIP]
 > **They're complementary, not rivals.** Ponytail cuts the *code you have to write*; paleo cuts the *tokens in the conversation*. Terse-persona prompts proved a terse prompt helps output — paleo takes that same idea and makes it modular, adds context-trimming and a hard budget, and drops the persona gimmick. Use Ponytail for code-heavy work and paleo for chatty, long sessions.
 
+## FAQ
+
+<details>
+<summary><b>Prompt dipangkas, context dipotong, kualitas gak bakal sama dong?</b></summary>
+
+Gak lebih jelek — malah sering lebih bagus. paleo bukan potong buta, dia buang *redundansi* (ulang-ulang, filler, boilerplate hasil tool, whitespace), bukan info esensial. Constraint, error, code, keputusan tetap utuh. Prompt lo gak diapa-apain — yang di-trim itu context kerja agent (hasil tool berulang, riwayat convo). Context bersih = model fokus ke signal, bukan lost track karena noise. Benchmark: median **53.8%** token turun, kualitas task gak drop. Trade-off jujur: budget ekstrem (token cap rendah banget) bisa turun kualitas, tapi setting *optional*. Intinya: lebih murah & cepet, kualitas tetap.
+
+</details>
+
+<details>
+<summary><b>System prompt itu buat bikin model bagus, klo dipangkas banyak yg ilang dong?</b></summary>
+
+paleo gak pernah sentuh system prompt. System prompt = aturan main, utuh 100%. Instruksi yang define behavior gak diapa-apain — paleo jalan *setelah* system prompt ke-load, cuma kerja di context dinamis. Yang di-trim itu context kerja (tool output berulang, convo kepanjangan), bukan instruksi. System prompt kecil dibanding noise yang numpuk dari tool output. Plus bisa whitelist bagian yang mau dijaga. Efeknya kebalik: context bersih bikin model *lebih* patuh ke system prompt. Aturan main tetep nempel.
+
+</details>
+
+<details>
+<summary><b>Bisa ngerusak code / formatting gak?</b></summary>
+
+Gak. paleo melindungi code block, structured output (JSON/table), dan error message secara default. Yang di-compress cuma prose bertele-tele & tool output redundant. Kalo masih ragu, bisa whitelist file/section tertentu biar 100% gak ke-trim.
+
+</details>
+
+<details>
+<summary><b>Ini butuh API key atau service eksternal?</b></summary>
+
+Enggak. paleo murni teknik prompt/context — gak ada server, gak ada API call, gak ada dependensi luar. Skill-nya tinggal di-load ke agent lo, jalan di lokal. No overengineering.
+
+</details>
+
+<details>
+<summary><b>Token savings-nya beneran kelihatan di billing?</b></summary>
+
+Kelihatan, terutama di session panjang & agent loop. Tiap token yang gak dikirim = gak dibayar. Benchmark kita median **53.8%** turun di context + output. Di agent yang muter 20+ tool call, itu selisih gede per run.
+
+</details>
+
+<details>
+<summary><b>Works di semua model/provider?</b></summary>
+
+Iya. paleo model-agnostic — kerja di level prompt & context, bukan di model tertentu. Claude, GPT, Gemini, GLM, Qwen, lokal — semua bisa. Sifatnya instruksi, bukan fine-tune.
+
+</details>
+
+<details>
+<summary><b>Beda sama auto-compaction bawaan agent (Claude compaction, dll)?</b></summary>
+
+Compaction bawaan itu generic & reaktif (baru jalan pas context mau penuh, sering blind truncation). paleo proaktif + selektif: jaga info esensial, buang redundansi, configurable, ada safety net (whitelist). Plus paleo juga ngurus output verbosity & tool-result summarization, bukan cuma convo history.
+
+</details>
+
+<details>
+<summary><b>Cara enable/disable per task?</b></summary>
+
+Trigger pakai natural language (`skip preamble`, `ringkas output`, `trim context`) — gak perlu slash command. Mau matiin? Tinggal gak dipanggil, atau cabut skill dari agent. No global lock-in.
+
+</details>
+
 ## Tips & Triggers
 
 > paleo activates from natural-language triggers — no slash command to register. Type the trigger, the skill loads and applies.
