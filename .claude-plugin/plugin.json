@@ -1,7 +1,7 @@
 {
   "name": "paleo",
-  "version": "1.1.0",
-  "description": "🪨 paleo — personal multi-agent skill collection by mocasus (Claude Code / Codex / Gemini / Hermes).",
+  "version": "1.2.0",
+  "description": "🪨 paleo — personal multi-agent skill collection by mocasus (Claude Code / Codex / Gemini / Hermes). Token-minimal skills.",
   "author": "mocasus",
   "homepage": "https://github.com/mocasus/paleo",
   "skills": [

@@ -1,12 +1,12 @@
-![version](https://img.shields.io/badge/version-1.1.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-2-orange) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
+![version](https://img.shields.io/badge/version-1.2.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![skills](https://img.shields.io/badge/skills-2-orange) ![agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20Gemini%20%7C%20Hermes-lightgrey)
 
 # 🪨 paleo
 
-Personal, public collection of reusable skills by **mocasus** — built to work across multiple AI coding agents
-(Claude Code, Codex, Gemini CLI, and Hermes Agent). Same idea as the *caveman* repo, but my own toolbox.
+Personal, public collection of reusable skills by **mocasus** — built to work across Claude Code, Codex, Gemini CLI, and Hermes Agent. Same idea as the *caveman* repo, but my own toolbox.
 
-Every skill lives in `skills/<name>/SKILL.md` with a `name` + `description` frontmatter, so it loads natively in
-Claude Code plugins, the `npx skills` registry, Gemini extensions, and Hermes.
+**Token-minimal by design:** every skill is written terse — no filler prose, exact code only — so loading it costs less LLM context.
+
+Every skill lives in `skills/<name>/SKILL.md` with `name` + `description` frontmatter (loads natively in Claude Code plugins, `npx skills` registry, Gemini extensions, Hermes).
 
 ## Skills
 
@@ -49,4 +49,4 @@ MIT — see [LICENSE](./LICENSE).
 
 ---
 
-<p align="center">🪨 paleo · v1.1.0 · MIT · by mocasus</p>
+<p align="center">🪨 paleo · v1.2.0 · MIT · by mocasus</p>
