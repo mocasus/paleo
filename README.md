@@ -212,26 +212,67 @@ Trigger pakai natural language (`skip preamble`, `ringkas output`, `trim context
 
 ## Installation
 
-```bash
-# Universal (any agent) — clone + copy skills manually
-git clone https://github.com/mocasus/paleo.git
-# copy skills/paleo*/ into your agent's skills directory
+<details><summary><b>🔵 Claude Code</b></summary>
 
-# Claude Code (one plugin bundles all 6 skills)
+```bash
 claude plugin marketplace add https://github.com/mocasus/paleo
 claude plugin install paleo@paleo
-
-# Codex / Cursor / Windsurf / 40+ agents (npx skills registry)
-npx skills add mocasus/paleo
-
-# Gemini CLI (native Agent Skills — auto-discovered from ~/.gemini/skills/)
-mkdir -p ~/.gemini/skills && cp -r skills/* ~/.gemini/skills/
-
-# Hermes Agent
-cp -r skills/paleo skills/paleo-trim-context skills/paleo-budget skills/paleo-converse skills/paleo-summary skills/paleo-json skills/paleo-auto ~/.hermes/skills/
 ```
+</details>
 
-All 7 skills load automatically — `paleo`, `paleo-trim-context`, `paleo-budget`, `paleo-converse`, `paleo-summary`, `paleo-json`.
+<details><summary><b>🟢 Codex</b></summary>
+
+```bash
+npx skills add mocasus/paleo
+```
+</details>
+
+<details><summary><b>🟡 Gemini CLI</b></summary>
+
+```bash
+mkdir -p ~/.gemini/skills && cp -r skills/* ~/.gemini/skills/
+```
+</details>
+
+<details><summary><b>🟣 Hermes Agent</b></summary>
+
+```bash
+hermes skills install mocasus/paleo
+# Or copy skills manually
+cp -r skills/paleo* ~/.hermes/skills/
+```
+</details>
+
+<details><summary><b>⚫ Cursor</b></summary>
+
+```bash
+npx skills add mocasus/paleo
+```
+</details>
+
+<details><summary><b>🔷 GitHub Copilot</b></summary>
+
+```bash
+npx skills add mocasus/paleo
+```
+</details>
+
+<details><summary><b>🌊 Windsurf</b></summary>
+
+```bash
+npx skills add mocasus/paleo
+```
+</details>
+
+<details><summary><b>📦 Universal (any agent)</b></summary>
+
+```bash
+git clone https://github.com/mocasus/paleo.git
+# copy skills/paleo*/ into your agent's skills directory
+```
+</details>
+
+All 7 skills load automatically — `paleo`, `paleo-trim-context`, `paleo-auto`, `paleo-budget`, `paleo-converse`, `paleo-summary`, `paleo-json`.
 
 > Full per-agent steps in [INSTALL.md](./INSTALL.md). See real compression numbers in [BENCHMARK.md](./BENCHMARK.md).
 
