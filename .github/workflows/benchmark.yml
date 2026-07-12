@@ -1,0 +1,71 @@
+name: Benchmark
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - 'bench/**'
+      - '.github/workflows/benchmark.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:  # manual trigger
+  schedule:
+    - cron: '0 0 * * 0'  # weekly Sunday midnight
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run benchmark
+        id: bench
+        env:
+          IDROUTER_API_KEY: ${{ secrets.IDROUTER_API_KEY }}
+        run: |
+          python3 bench/benchmark.py --model claude-sonnet-4.5 --out bench/results.json
+          MEDIAN=$(python3 -c "import json; d=json.load(open('bench/results.json')); print(d['median_savings_pct'])")
+          echo "median=${MEDIAN}" >> $GITHUB_OUTPUT
+          echo "Median savings: ${MEDIAN}%"
+
+          # Generate shields.io endpoint badge
+          python3 -c "
+          import json
+          d = json.load(open('bench/results.json'))
+          badge = {
+            'schemaVersion': 1,
+            'label': 'savings',
+            'message': f'median ~{d[\"median_savings_pct\"]}%',
+            'color': 'brightgreen' if d['median_savings_pct'] >= 50 else 'green' if d['median_savings_pct'] >= 30 else 'yellow'
+          }
+          json.dump(badge, open('bench/badge.json', 'w'), indent=2)
+          "
+          echo "Badge written to bench/badge.json"
+
+      - name: Print results table
+        run: |
+          python3 -c "
+          import json
+          d = json.load(open('bench/results.json'))
+          print(f\"## Benchmark Results — model {d['model']} ({d['runs']} run(s))\")
+          print()
+          print('| Task | Baseline | paleo | Savings |')
+          print('|---|---|---|---|')
+          for r in d['rows']:
+              print(f\"| {r['task']} | {r['baseline_delivery_tokens']} | {r['paleo_delivery_tokens']} | **{r['savings_pct']}%** |\")
+          print(f\"| | | **median** | **{d['median_savings_pct']}%** |\")
+          print(f\"\nMean: {d['mean_savings_pct']}%  ·  Median: {d['median_savings_pct']}%\")
+          " >> $GITHUB_STEP_SUMMARY
+
+      - name: Commit badge & results (push only)
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bench/results.json bench/badge.json
+          git diff --staged --quiet || git commit -m "bench: auto-update results [skip ci]" && git push

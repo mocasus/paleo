@@ -1,0 +1,41 @@
+{
+  "name": "paleo",
+  "version": "2.5.0",
+  "description": "🦴 paleo — Token-saving skills for LLM agents. Cut output & context tokens ~50-70% (median ~54%) without losing code/technical accuracy. 7 composable skills: terse mode, context trim, budget cap, conversation compress, summary, JSON compact, and auto.",
+  "homepage": "https://github.com/mocasus/paleo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mocasus/paleo.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "llm",
+    "tokens",
+    "compression",
+    "efficiency",
+    "ai-agent",
+    "token-saving",
+    "skills",
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "hermes-agent",
+    "cursor",
+    "copilot",
+    "windsurf"
+  ],
+  "agents": {
+    "skills": "./skills/"
+  },
+  "files": [
+    "skills/",
+    "README.md",
+    "INSTALL.md",
+    "BENCHMARK.md",
+    "AGENTS.md"
+  ],
+  "skillpm": {
+    "registry": "https://agentskills.io"
+  }
+}

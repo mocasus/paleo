@@ -1,48 +1,74 @@
 # Install paleo
 
-Pick the agent you use. All methods pull from the `paleo` repo on GitHub.
+## Quick (recommended)
 
-## Claude Code
-
-```bash
-claude plugin marketplace add https://github.com/mocasus/paleo
-claude plugin install paleo@paleo
 ```
-
-One plugin bundles all 6 skills: `paleo`, `paleo-trim-context`, `paleo-budget`, `paleo-converse`, `paleo-summary`, `paleo-json`.
-
-## Codex / Cursor / Windsurf / Cline / 30+ agents
-
-```bash
 npx skills add mocasus/paleo
 ```
 
-## Gemini CLI
+This works for Claude Code, Codex, Gemini CLI, Hermes, Cursor, Copilot, and Windsurf.
 
-```bash
-gemini extensions install https://github.com/mocasus/paleo
+## Per-agent
+
+<details><summary>Claude Code</summary>
+
 ```
-
-## Hermes Agent
-
-```bash
-cp -r skills/paleo skills/paleo-trim-context skills/paleo-budget ~/.hermes/skills/
+npx skills add mocasus/paleo -a claude-code
 ```
+</details>
 
-The skills load on the next Hermes session.
+<details><summary>Codex</summary>
 
-## Manual (any agent)
+```
+npx skills add mocasus/paleo -a codex
+```
+</details>
 
-Clone and copy the skill folders you want:
+<details><summary>Gemini CLI</summary>
 
-```bash
+```
+npx skills add mocasus/paleo -a gemini
+```
+</details>
+
+<details><summary>Hermes Agent</summary>
+
+```
+hermes skills install mocasus/paleo
+```
+Or: `npx skills add mocasus/paleo -a hermes`
+</details>
+
+<details><summary>Cursor</summary>
+
+```
+npx skills add mocasus/paleo -a cursor
+```
+</details>
+
+<details><summary>GitHub Copilot</summary>
+
+```
+npx skills add mocasus/paleo -a copilot
+```
+</details>
+
+<details><summary>Windsurf</summary>
+
+```
+npx skills add mocasus/paleo -a windsurf
+```
+</details>
+
+## Manual
+
+```
 git clone https://github.com/mocasus/paleo.git
-cp -r paleo/skills/paleo ~/.hermes/skills/   # example: just the paleo skill
+cp -r paleo/skills/paleo* <your-agent-skills-dir>/
 ```
 
-## Prerequisites
+## Verify
 
-- No external dependencies — every skill is plain Markdown, nothing to install.
-- For Hermes / Claude Code, just drop the `skills/<name>` folder into your agent's skills directory.
+In your agent chat, type `paleo`. Agent should respond tersely, code-first.
 
-Never commit `.env` or `*.session` — they are git-ignored.
+For auto-mode: `paleo-auto`.
