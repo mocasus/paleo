@@ -47,9 +47,9 @@ paleo compresses *delivery*, not meaning. Code, commands, and technical terms st
 | Skill | What it does | Trigger example |
 |---|---|---|
 | `paleo` | Terse output mode — cut output tokens ~50–70%, keep code/terms exact. | `paleo mode` · `be brief` · `save tokens` |
-| `paleo-trim-context` | Proactively trim/summarize context to save tokens without losing task state. | `trim context` (auto on long sessions) |
 | `paleo-auto` | 🆕 Zero-touch auto-detection — watches session & enables the right skills automatically. | `paleo-auto` · `auto paleo` · `enable auto-save` |
 | `paleo-budget` | Hard token budget per task — cap spend, summarize if exceeded. | `budget 2000` · `stay under 2000 tokens` |
+| `paleo-trim-context` | Proactively trim/summarize context to save tokens without losing task state. | `trim context` (auto on long sessions) |
 | `paleo-converse` | Condense old chat turns + merge duplicate messages; keep last N verbatim. | `condense chat` · `compress conversation` · `paleo-converse N=8` |
 | `paleo-summary` | Tight intisari of bulky tool output / logs / diffs / dumps. | `tldr` · `condense this` · `summarize output` |
 | `paleo-json` | Minify & compact structured/JSON output, stay parseable. | `compact json` · `minify` |
